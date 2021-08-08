@@ -3,19 +3,20 @@
 
 using namespace std;
 
-int func(int arr[],int n){
+//func returns max odd sum if exists else returns 1
+int func(int arr[],int n){ 
     
-    int min_odd=INT_MAX;
+    int min_odd=INT_MAX; //min_odd is the minimum odd number in absolute terms
     
-    bool isOdd=false;
+    bool isOdd=false; //isOdd checks if there's at least one odd number in the given array
     
-    int sum=0;
+    int sum=0; //stores sum of all positive elements
     for(int i=0;i<n;i++){
         
-        if(arr[i]>0)
+        if(arr[i]>0) //adding positive numbers
          sum=sum+arr[i];
          
-        if(arr[i]%2!=0){
+        if(arr[i]%2!=0){ //to find minimum odd number(absolute) in the array
             isOdd=true;
             if(min_odd>abs(arr[i]))
                 min_odd=abs(arr[i]);
@@ -24,10 +25,10 @@ int func(int arr[],int n){
          
     }
     
-    if(isOdd==false)
+    if(isOdd==false) //if no odd number in array return -1
         return -1;
         
-    if(sum%2==0){
+    if(sum%2==0){ //if sum is even we subtract min_odd since even-odd=odd (NOTE: min_odd has the absolute value of the array element) 
         sum=sum-min_odd;
     }
     
