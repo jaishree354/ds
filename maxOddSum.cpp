@@ -6,7 +6,9 @@ using namespace std;
 //func returns max odd sum if exists else returns 1
 int func(int arr[],int n){ 
     
-    int min_odd=INT_MAX; //min_odd is the minimum odd number in absolute terms
+    //min_odd is the minimum odd number in absolute terms
+    
+    int min_odd=INT_MAX; //INT_MAX is a macro that specifies that an integer variable cannot store any value beyond this limit. 
     
     bool isOdd=false; //isOdd checks if there's at least one odd number in the given array
     
